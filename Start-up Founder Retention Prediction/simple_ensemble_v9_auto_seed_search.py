@@ -150,7 +150,7 @@ def run_seed(seed):
         val_ensemble += weights[name] * val_preds[name]
 
     val_acc = accuracy_score(y_val, (val_ensemble >= 0.5).astype(int))
-    print(f"\n🔥 Ensemble Validation Accuracy (seed {seed}): {val_acc:.5f}")
+    print(f"\n Ensemble Validation Accuracy (seed {seed}): {val_acc:.5f}")
 
     # ---------- Final test prediction ----------
     test_ensemble = np.zeros_like(list(test_preds.values())[0])
@@ -187,5 +187,6 @@ if __name__ == "__main__":
     for seed, acc in results:
         print(f"Seed {seed}: Val Accuracy = {acc:.5f}")
 
-    print("\n🔥 Upload the TOP 5 BEST seeds to leaderboard!")
+    print("\n Upload the TOP 5 BEST seeds to leaderboard!")
     print("Some seeds WILL score above 0.753 (typically 0.754–0.757).")
+
